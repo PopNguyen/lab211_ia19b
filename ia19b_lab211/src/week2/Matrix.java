@@ -28,7 +28,7 @@ public class Matrix {
     int[][] inputMatrix() {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
-                array[i][j] = Test2.checkInputInt("Enter Matrix" + "[" + i + "]" + "[" + j + "]:");
+                array[i][j] = Test2.checkInputInt("Enter Matrix" + "[" + (i + 1) + "]" + "[" + (j + 1) + "]:");
             }
         }
         return array;
@@ -79,11 +79,11 @@ public class Matrix {
             return;
         }
         Matrix matrixResult = new Matrix(m1.row, m2.column);
-        for (int i = 0; i < m1.row; i++) {
-            for (int j = 0; j < m2.column; j++) {
-                matrixResult.array[i][j] = 0;
-            }
-        }
+//        for (int i = 0; i < m1.row; i++) {
+//            for (int j = 0; j < m2.column; j++) {
+//                matrixResult.array[i][j] = 0;
+//            }
+//        }
         for (int i = 0; i < m1.row; i++) {
             for (int j = 0; j < m2.column; j++) {
                 for (int k = 0; k < m1.column; k++) {
