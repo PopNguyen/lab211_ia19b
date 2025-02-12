@@ -42,20 +42,17 @@ public class Test3 {
                     System.out.println("Sorted Array: \n " + Arrays.toString(bbSort.bubbleSort()));
                     break;
                 case 2:
-                    System.out.println("Enter number of Array: ");
-                    int n = sc.nextInt();
-                    QuickSort qSort = new QuickSort(n);
+                   
+                    QuickSort qSort = new QuickSort(Utils.checkInt("Enter number of array: "));
                     qSort.add();
                     System.out.println("Unsorted Array: ");
                     qSort.showArray();
                     System.out.println("Sorted Array: ");
-                    qSort.quickSort(0, n - 1);
+                    qSort.quickSort(0, qSort.getArray().length - 1);
                     qSort.showArray();
                     break;
                 case 3:
-                    System.out.println("Enter number of Array: ");
-                    int capacity = sc.nextInt();
-                    BinarySearch biSearch = new BinarySearch(capacity);
+                    BinarySearch biSearch = new BinarySearch(Utils.checkInt("Enter number of array: "));
                     biSearch.add();
                     biSearch.sort();
                     System.out.println("Enter search value: ");

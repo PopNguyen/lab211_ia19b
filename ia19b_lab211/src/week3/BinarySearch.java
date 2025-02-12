@@ -12,7 +12,7 @@ import java.util.Random;
  * @author ASUS
  */
 public class BinarySearch {
-    private int[] array;
+    private final int[] array;
     public BinarySearch(int n){
         this.array = new int[n];
     }
@@ -36,17 +36,14 @@ public class BinarySearch {
         System.out.println(Arrays.toString(array));
     }
     int searchBinary(int x){
-        int middleElement = array[array.length/2];
-        if(middleElement==x) return array.length/2;
-        else if(middleElement > x){
-            for(int i = 0;i<array.length/2;i++){
-                if(array[i]==x) return i;
-            }
-        }else if(middleElement < x){
-            for(int i = array.length/2 + 1;i<=array.length;i++){
-                if(array[i]==x) return i;
-            }
-        }
+       int left = 0;
+       int right = array.length - 1;
+       while(left <= right){
+           int mid = (left+right)/2;
+           if(array[mid]==x) return mid;
+           if(array[mid]<x) left = mid +1;
+           else right = mid -1;
+       }
         return -1;
     }
 }
